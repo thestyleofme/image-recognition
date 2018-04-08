@@ -5,7 +5,8 @@ this is my Graduation Project.
 
 1. use spring cloud task,run the retrain.bat
 
-  retrain.bat runs the tensorflow-master/tensorflow/examples/image_retraining/retrain.py ,and uses the inception-v3 model 
+  you can train your own data by run the retrain.bat
+  runs the tensorflow-master/tensorflow/examples/image_retraining/retrain.py and uses the inception-v3 model
   #inception-2015-12-05.tgz
 
   After execution,under the classpath,two files are generated,output_graph.pb and output_labels.txt. 
@@ -44,7 +45,7 @@ app.processor.spring.cloud.stream.bindings.output.destination=springcloudstreams
 app.sink.spring.cloud.stream.bindings.input.destination=springcloudstreamsink,
 app.*.spring.cloud.stream.bindings.output.binder=rabbit1,app.*.spring.cloud.stream.bindings.input.binder=rabbit1"
 
-  Note:deploy the sateams,app.*.spring.cloud.stream.bindings.output.destination should be consistent with your programs.
+  Note:deploy the sateams,app.*.spring.cloud.stream.bindings.output.destination should be consistent with your programs
 
 6. the you can see the logs and visit the sink application's ip:port/index to check the result
 
