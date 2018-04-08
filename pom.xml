@@ -12,7 +12,7 @@
         <module>springcloud-stream-rabbit-source</module>
         <module>springcloud-stream-rabbit-processor</module>
         <module>springcloud-stream-rabbit-sink</module>
-		<module>springcloud-task</module>
+	<module>springcloud-task</module>
     </modules>
 
     <packaging>pom</packaging>
