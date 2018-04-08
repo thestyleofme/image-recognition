@@ -3,7 +3,7 @@ invoke a python-trained tensorflow model from java programs,Real-time image reco
 
 this is my Graduation Project.
 
-1. use spring cloud task,run the retrain.bat
+# 1. use spring cloud task,run the retrain.bat
 
   you can train your own data by run the retrain.bat
   runs the tensorflow-master/tensorflow/examples/image_retraining/retrain.py and uses the inception-v3 model
@@ -13,7 +13,7 @@ this is my Graduation Project.
 
   Of course you can modfiy the application.properties to change the path
 
-2. start source,processor,sink applications
+# 2. start source,processor,sink applications
 
   you can modfiy their application.properties according to your programs
 
@@ -21,12 +21,12 @@ this is my Graduation Project.
   spring cloud stream processor application: invoke the python-trained tensorflow model,and get the image recognition result
   spring cloud stream sink application: just a simple ui used freemarker to show the result
 
-3. now we can package the sateams,source,processor,sink
+# 3. now we can package the sateams,source,processor,sink
   $ mvn clean package
 
-4. start the data flow server
+# 4. start the data flow server
 
-5. we can use the Data Flow Shell to deploy the sateams and task.
+# 5. we can use the Data Flow Shell to deploy the sateams and task.
   The Data Flow Shell is a client for the Data Flow Server. The shell allows us to perform the DSL command needed to interact with the server
 
 $ java - jar spring-cloud-dataflow-shell-1.2.3.RELEASE.jar
@@ -47,5 +47,5 @@ app.*.spring.cloud.stream.bindings.output.binder=rabbit1,app.*.spring.cloud.stre
 
   Note:deploy the sateams,app.*.spring.cloud.stream.bindings.output.destination should be consistent with your programs
 
-6. the you can see the logs and visit the sink application's ip:port/index to check the result
+# 6. the you can see the logs and visit the sink application's ip:port/index to check the result
 
