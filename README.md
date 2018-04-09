@@ -43,7 +43,8 @@ $ java - jar spring-cloud-dataflow-shell-1.2.3.RELEASE.jar
 app.processor.spring.cloud.stream.bindings.input.destination=springcloudstream,
 app.processor.spring.cloud.stream.bindings.output.destination=springcloudstreamsink,
 app.sink.spring.cloud.stream.bindings.input.destination=springcloudstreamsink,
-app.*.spring.cloud.stream.bindings.output.binder=rabbit1,app.*.spring.cloud.stream.bindings.input.binder=rabbit1"
+app.*.spring.cloud.stream.bindings.output.binder=rabbit1,
+app.*.spring.cloud.stream.bindings.input.binder=rabbit1"
 
   Note:deploy the sateams,app.*.spring.cloud.stream.bindings.output.destination should be consistent with your programs
 
