@@ -25,11 +25,20 @@
             <artifactId>spring-cloud-task-starter</artifactId>
             <version>1.0.3.RELEASE</version>
         </dependency>-->
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-task</artifactId>
 			<version>1.2.2.RELEASE</version>
 		</dependency>
+=======
+             
+         <dependency>
+                  <groupId>org.springframework.cloud</groupId>
+                  <artifactId>spring-cloud-starter-task</artifactId>
+                  <version>1.2.2.RELEASE</version>
+         </dependency>
+>>>>>>> c3f20ebd4be25841acd42ece785a48c46a7068fb
     </dependencies>
 
     <build>
