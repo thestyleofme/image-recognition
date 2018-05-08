@@ -38,6 +38,7 @@ should have a structure like this:
 ~/flower_photos/sunflower/somepicture.jpg
 
 The subfolder names are important, since they define what label is applied to
+
 each image, but the filenames themselves don't matter. Once your images are
 prepared, you can run the training with a command like this:
 
