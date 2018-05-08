@@ -12,11 +12,21 @@ import org.springframework.integration.annotation.InboundChannelAdapter;
 import org.springframework.integration.annotation.Poller;
 import org.springframework.integration.core.MessageSource;
 import org.springframework.messaging.support.GenericMessage;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import sun.misc.BASE64Decoder;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.*;
 import java.util.List;
 
 @SpringBootApplication
+@Controller
 @EnableBinding(Source.class)
 public class SpringStreamRabbit {
 
@@ -30,6 +40,33 @@ public class SpringStreamRabbit {
     public MessageSource<String> createMessage() {
 //        return () -> new GenericMessage<>(new SimpleDateFormat().format(new Date()));
         return () -> new GenericMessage<>(getImagePath());
+    }
+
+    @RequestMapping("/getImage")
+    @ResponseBody
+    public Boolean getImage(String imageBase64, String imageName) {
+        return decodeBase64ToImage(imageBase64, imageName);
+    }
+
+    /**
+     * 将Base64位编码的图片进行解码，并保存到指定目录
+     *
+     * @param base64 base64编码的图片信息
+     * @return
+     */
+    public Boolean decodeBase64ToImage(String base64, String imgName) {
+        String imagePath = imagesPath + "/" + imgName;
+        BASE64Decoder decoder = new BASE64Decoder();
+        try {
+            FileOutputStream write = new FileOutputStream(new File(imagePath));
+            byte[] decoderBytes = decoder.decodeBuffer(base64);
+            write.write(decoderBytes);
+            write.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public String getImagePath() {
